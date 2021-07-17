@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "id",
+    "name",
+    "short_name",
+    "version",
+    "description",
+    "homepage_url",
+    "license",
+    "author",
+    "gateway_specific_settings"
+  ],
+  "title": "Manifest",
+  "properties": {
+    "manifest_version": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "homepage_url": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "gateway_specific_settings": {
+      "type": "object",
+      "required": [
+        "webthings"
+      ],
+      "properties": {
+        "webthings": {
+          "type": "object",
+          "required": [
+            "exec",
+            "primary_type",
+            "strict_max_version",
+            "strict_min_version"
+          ],
+          "properties": {
+            "exec": {
+              "type": "string"
+            },
+            "primary_type": {
+              "type": "string"
+            },
+            "strict_max_version": {
+              "type": "string"
+            },
+            "strict_min_version": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "web_accessible_resources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "content_scripts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "css": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "js": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "object"
+        },
+        "schema": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}
